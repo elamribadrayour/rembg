@@ -1,15 +1,15 @@
 from typing import Tuple
 
+from PIL import Image
 import streamlit
 from rembg import remove
-
-from PIL import Image
 
 
 def remove_background(
     image: Image,
     color: Tuple
 ):
+    """Replace background by a unified color."""
     outputs = Image.new('RGB', image.size, color)
     mask = remove(data=image)
     outputs.paste(mask, (0, 0), mask)
@@ -17,6 +17,7 @@ def remove_background(
 
 
 def load_image(image_file):
+    """Load an image."""
     image = Image.open(image_file)
     return image
 
