@@ -47,6 +47,3 @@ streamlit.image(image)
 output = remove_background(image, color=rgb_color)
 streamlit.markdown("## Output image")
 streamlit.image(output)
-
-
-
